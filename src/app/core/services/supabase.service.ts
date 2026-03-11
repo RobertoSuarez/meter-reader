@@ -28,7 +28,10 @@ export class SupabaseService {
   
   // Auth
   async signInWithEmail(email: string) {
-    return this.supabase.auth.signInWithOtp({ email });
+    const redirectTo = environment.production
+      ? 'https://meter-reader-app.onrender.com'
+      : window.location.origin;
+    return this.supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: redirectTo } });
   }
 
   async signOut() {
