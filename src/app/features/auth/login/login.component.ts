@@ -64,7 +64,7 @@ import { SupabaseService } from '../../../core/services/supabase.service';
                 </div>
               </div>
 
-              <button type="submit" class="submit-btn" [disabled]="loading() || !email()">
+              <button type="submit" class="submit-btn" [disabled]="loading() || !email">
                 <span *ngIf="!loading()">✨ Enviar enlace mágico</span>
                 <span *ngIf="loading()" class="loading-text">
                   <span class="spinner"></span> Enviando...
